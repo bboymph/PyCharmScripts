@@ -1,0 +1,65 @@
+﻿{% extends 'templates/header.html' %}
+{% block head %}
+        {{super()}}
+
+          <style>
+
+
+            .panel-success{
+                width: 630px;
+            }
+
+            .cad{
+                width: 468px;
+                height: 100%;
+            }
+            .panel-body{
+                background-image:url(../static/img/hapgback.jpg);
+                background-size: cover;
+                background-position: center;
+            }
+
+          </style>
+{% endblock %}
+
+{%block barra %}
+        {{super()}}
+{% endblock %}
+{% block content %}
+  <body ng-controller="StoreController as store">
+
+   	<div class= "container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                      <h2 class="panel-heading">Lista de Alunos</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive" >
+                                      <table class="table">
+                                          <thead>
+                                            <tr>
+                                                <th>Nome</th>
+                                                <th>Email</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody ng-repeat="user in users">
+                                            <tr>
+                                                    <td><font color="white">{user.nome}</font></td>
+                                                    <td><font color="white">{user.email}</font></td>
+                                            </tr>
+                                          </tbody>
+                                      </table>
+                                    </div>
+
+        </div>
+        </div>
+    
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  </body>
+</html>
+{% endblock %}

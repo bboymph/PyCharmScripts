@@ -1,0 +1,44 @@
+﻿{% extends 'templates/header.html' %}
+{% block head %}
+        {{super()}}
+          <style>
+
+            html,body{
+                height:100%;
+                width:100%;
+                background-image:url(../static/img/hapgback.jpg);
+                background-position: center;
+                background-size: cover;
+            }
+
+          </style>
+{% endblock %}
+
+{%block barra %}
+        {{super()}}
+{% endblock %}
+{% block content %}
+  <body>
+
+   	<div class= "container">
+
+        <div class="col-md-12 column">
+            <h1><font color="white">Lista de Usuários</font></h1>
+            <br>
+            <h3><font color="white">Nome</font></h3>
+            <ol>
+                {% for aluno in lista_alunos %}
+                    <li><font color="white">{{ aluno.nome }}</font></li>
+                {% endfor %}
+            </ol>
+        </div>
+	</div class= "container">
+    
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  </body>
+</html>
+{% endblock %}

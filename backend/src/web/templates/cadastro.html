@@ -1,0 +1,121 @@
+﻿{% extends 'templates/header.html' %}
+{% block head %}
+        {{super()}}
+
+          <style>
+
+
+            .panel-success{
+                width: 820px;
+            }
+
+            .cad{
+                width: 468px;
+                height: 100%;
+            }
+            .panel-body{
+                background-image:url(../static/img/hapgback.jpg);
+                background-size: cover;
+                background-position: center;
+            }
+
+          </style>
+{% endblock %}
+
+{%block barra %}
+        {{super()}}
+{% endblock %}
+{% block content %}
+  <body ng-controller="StoreController as store">
+
+   	<div class= "container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                      <h2 class="panel-heading">Lista de Alunos</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive" >
+                                      <table class="table">
+                                          <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Nome</th>
+                                                <th>Email</th>
+                                          </thead>
+                                          <tbody>
+                                            <tr ng-repeat="usuario in users | orderBy:usuario.nome">
+                                                    <td>
+                                                        <font color="white" ng-show="!usuario.isShow">{usuario.id}</font>
+
+                                                    </td>
+                                                    <td>
+                                                        <font color="white" ng-show="!usuario.isShow">{usuario.nome}</font>
+                                                        <input ng-show="usuario.isShow"  ng-model="usuario.nome" type="text">
+                                                    </td>
+                                                    <td>
+                                                        <font color="white" ng-show="!usuario.isShow">{usuario.email}</font>
+                                                        <input ng-show="usuario.isShow"  ng-model="usuario.email" type="text">
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" class="glyphicon glyphicon-trash btn btn-danger btn-sm" ng-click="remover(usuario, $index)"></button>
+                                                        <button type="button" class="glyphicon glyphicon-pencil btn btn-primary btn-sm" ng-hide="usuario.isShow" ng-click="usuario.isShow=!usuario.isShow">Editar</button>
+                                                        <button type="button" class="glyphicon glyphicon-ok btn btn-success btn-sm" ng-show="usuario.isShow" ng-click="atualizar(usuario)">Atualizar</button>
+                                                    </td>
+                                            </tr>
+                                          </tbody>
+                                      </table>
+                                    </div>
+                        <!-- Small modal -->
+                         <button class="glyphicon glyphicon-plus btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Adicionar</button>
+                    </div>
+
+        <div class="col-md-7">
+
+                    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-md" style="width: 470px">
+                        <div class="modal-content">
+                            <div class="panel panel-success cad">
+                                <div class="panel-heading">
+                                  <h2 class="panel-heading">Tela de Cadastro</h2>
+                                </div>
+                                <div class="panel-body">
+
+                                    <form class="form-signin" role="form" method="post" action="/cadastro/cadastrar">
+                                        <h3 class="form-signin-heading" ><font color="white">Nome</font></h3>
+                                        <input type="text" name="nome" class="form-control" placeholder="Exemplo : Pedro" required autofocus>
+                                        <h3 class="form-signin-heading"><font color="white">Sobrenome</font></h3>
+                                        <input type="text" name="sobrenome" class="form-control" placeholder="Silva Campos" required>
+
+                                        <h3 class="form-signin-heading"><font color="white">E-mail</font></h3>
+                                        {% if logged %}
+                                            <input type="email" id="email" name="email" class="form-control S" placeholder="exemplo@exemplo.com" required autofocus> <button class="btn btn-success" type="button" onclick="$('#email').val($('div.btn-entrar font').text().replace('(', '').replace(')', ''))">Utilizar email do login</button>
+                                        {% else %}
+                                            <input type="email" name="email" class="form-control S" placeholder="exemplo@exemplo.com" required autofocus>
+                                        {% endif %}
+                                        <h3 class="form-signin-heading"><font color="white">Senha</font></h3>
+                                        <input type="password" name="id" class="form-control" placeholder="Não passe a senha à nínguem" required>
+                                        <br>
+                                        <button class="btn btn-success" type="submit">Cadastrar</button>
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                    </form>
+                                </div>
+                            </div>
+                         </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        </div>
+        </div>
+        </div>
+    
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  </body>
+</html>
+{% endblock %}

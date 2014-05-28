@@ -1,0 +1,84 @@
+﻿{% extends 'templates/header.html' %}
+{% block head %}
+        {{super()}}
+            <style>
+        html,body{
+            height:100%;
+            width:100%;
+            background-image:url(../static/img/hapgback.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+        </style>
+{% endblock %}
+
+{%block barra %}
+        {{super()}}
+{% endblock %}
+{% block content %}
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h1 class="page-header"><font color="#f0ffff"> História da Arte</font></h1>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-8">
+                <img class="img-responsive" src="../static/img/haphist.jpg" height="500" width="700">
+            </div>
+
+            <div class="col-md-4">
+                <h3><font color="#f0ffff">Origem</font></h3>
+                <p><font color="#f0ffff">O significado de HAP (união), KI (força, espírito) e DO (caminho), formou o significado de Hapkido em: “O caminho da união da força e do espírito da arte marcial coreana”.</font></p>
+                <br>
+                <p><font color="#f0ffff">A luta pela sobrevivência fez com que o homem adotasse diferentes e variadas formas de combates com ou sem armas, em algumas ocasiões de criação própria ou então através de imitação a animais ou de lutadores mais peritos.</font></p>
+                <p><font color="#f0ffff">O hapkido acompanhando o crescimento do budismo desde os tempos de Goryo, passou por três reinos: SILA (pronuncia-se chila em português), BAEK JE, e KOGURYO. Por ser o menor dos três reinos, SILA sofria constantes invasões de salteadores que viviam pela região e de seus vizinhos KOGURYO e BAEK JE. Durante o reinado de Chin Heung, vigésimo quarto rei de SILA, um grupo de jovens aristocratas, todos descendentes de famílias nobres, criaram um corpo de oficiais denominado de HWARANG, onde treinavam forte e tinham uma sólida formação moral e ética.</font></p>
+                <p><font color="#f0ffff">Já na Coréia, se fundou a escola que se chama Yu Kwan Sool Hapki Dojang. Com o passar do tempo o nome da arte foi se alterando até chegar ao HAPKIDO em 1958, juntamente com acréscimos de chutes e armas ao arsenal de torções de sua arte.</font></p>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h3 class="page-header"><font color="#f0ffff">Saiba Mais</font></h3>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="/HistoriaAcademia">
+                    <img class="img-responsive portfolio-item" src="../static/img/academia_logo_500x300.jpg">
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <div class="container">
+
+        <hr>
+
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Company 2014</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+
+</body>
+
+</html>
+
+{% endblock %}

@@ -1,0 +1,70 @@
+﻿{% extends 'templates/header.html' %}
+{% block head %}
+        {{super()}}
+{% endblock %}
+
+{%block barra %}
+        {{super()}}
+{% endblock %}
+{% block content %}
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h1 class="page-header"><font color="#f0ffff"> História do Mestre </font></h1>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-8">
+                <img class="img-responsive" src="../static/img/academia_logo.jpg" height="500" width="700">
+            </div>
+
+            <div class="col-md-4">
+                <h3><font color="#f0ffff">* Sabonim Demetrius *</font></h3>
+                <p><font color="#f0ffff">A escola de Artes Marciais Hapkido Oriental existe desde 1995, é uma com uma boa estrutura para os treinamentos com dojang, equipamentos de luta (colete,caneleira,luva,capacete).</font></p>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h3 class="page-header"><font color="#f0ffff">Saiba Mais</font></h3>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="/HistoriaDaArte">
+                    <img class="img-responsive portfolio-item" src="../static/img/haphist_500x300.jpg">
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <div class="container">
+
+        <hr>
+
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Company 2014</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+</body>
+
+</html>
+
+{% endblock %}
