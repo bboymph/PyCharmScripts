@@ -2,8 +2,9 @@ import unittest
 from backend.teste.base import GAETestCase
 from web.rest import rest
 from web.rest.rest import Usuario
-
+from mock import Mock
 from web import cadastro
+
 
 __author__ = 'Rodrigo Brito'
 
@@ -30,6 +31,18 @@ class RestTest(GAETestCase):
         lista = Usuario.query().fetch()
         user = lista[0]
         self.assertNotEqual('Rodrigo',user.nome)
+
+
+class MockTests(GAETestCase):
+
+    def setUp(self):
+        super(MockTests, self).setUp()
+        self.mock = Mock()
+
+    def test_cadastro(self):
+        cadastro.index(self.mock)
+        self.mock.assert_called_with(u'/templates/cadastro.html', {u'lista_alunos': []})
+
 
 
 
